@@ -1,0 +1,72 @@
+#VERSION 2.0 
+#WORKS PERFECTLY AS EXPECTED
+#PLAYED in 1st QUADRANT OF CARTESIAN PLANE
+
+def wincheck(board):
+    #HORIZONTAL WIN CHECK     
+    for i in range(0,3):
+        if len(set(board[i])) == 1:
+            if 0 in board[i]:
+                return 0
+            if 1 in board[i]:
+                return 1    
+    #VERTICAL WIN CHECK
+    for i in range(0,3):
+        if board[0][i] == board[1][i] == board[2][i] == 0:
+            print('WOW SO COOL BRO WON SOMETHING IN COLUMN : ',i)
+            return 0
+        if board[0][i] == board[1][i] == board[2][i] == 1:
+            print('DAMN THATS CRAZY A VERTICAL WIN IN COLUMN : ',i)
+            return 1    
+    #DIAGONAL WIN CHECK
+    if board[0][0] == board[1][1] == board[2][2]:
+        if board[1][1] == 0:
+            return 0
+        elif board[1][1] == 1:
+            return 1
+    if board[0][2] == board[1][1] == board[2][0]:
+        if board[1][1] == 0:
+            return 0
+        elif board[1][1] == 1:
+            return 1
+    
+def display(board):
+    print(board[2])
+    print(board[1])
+    print(board[0])
+
+def change(x,y,z,board):
+    if board[x][y] in [0,1]:
+        print('Cell is occupied try again')
+        a = int(input("Enter new X values : "))
+        b = int(input("Enter new Y values : "))
+        change(a,b,z,board) 
+    else:
+        pass    
+        board[x][y] = z
+        return board
+
+game,outcome = [['_','_','_'],['_','_','_'],['_','_','_']],None
+
+for i in range(0,9):
+    display(game)
+
+    y = int(input("Enter new X values : ")) # WE ASK FOR X INPUT BUT IT TAKES Y SO THAT IT RESEMBLES CARTESIAN PLANE
+    x = int(input("Enter new Y values : "))
+    if i % 2 == 0:
+        pass   
+        z = 0
+    else:
+        z = 1
+    board = change(x,y,z,game)
+    outcome = wincheck(game)
+    if outcome == 0:
+        print('Player 1 Wins!!')
+        break
+    if outcome == 1:
+        print('Player 2 Wins!!')
+        break
+if outcome == None:
+    print('Draw!!')
+
+display(game)
