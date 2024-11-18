@@ -2,6 +2,12 @@
 #WORKS PERFECTLY AS EXPECTED
 #PLAYED in 1st QUADRANT OF CARTESIAN PLANE
 
+#CELL LOCATIONS AS FOLLOWS
+
+#02, 12, 22
+#01, 11, 21
+#00, 10, 20
+
 def wincheck(board):
     #HORIZONTAL WIN CHECK     
     for i in range(0,3):
