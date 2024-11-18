@@ -1,0 +1,166 @@
+# any integer that starts with 0o is OCTAL
+
+#NUMBER_SYSTEM
+
+print(0xAF5) #Hexadecimal
+print(0o501) #Octal
+print(501) #Integer
+
+#Arithmatic overflow, multiply 2 very large numbers causing it to display infinity
+#Arithmatic underflow, dividing 2 very small numbers results in 0.0
+#Loss of precision problem, dividing 1/3 gives 0.333333..., but the 3 doesnt go on forever
+#Built-in format function 
+#STRINGS IN DOUBLE QUOTES ARE EXACTLY THE SAME AS SINGLE QUOTES
+
+#STRING_OPERATOR
+
+print(bool("hello" == 'hello'))
+print(bool(1))
+
+print("I have studied C++. \
+but my favourite language is python.\n\n")
+
+print("The man replies \nmy name is Shaunak\n\n")   
+
+print("\\, \", \', \ablyat, \ncyka, \td, \fabd\n\n")
+
+str = "Python is so skibidi ez!!!"
+
+print(str)
+print(str[13:20])
+print(str[-5:-1])
+print(str[::-1])
+print(str * 2,"\n")
+print(str + "CYKA C")
+
+
+print('''grr
+hehehaw
+123\n
+''',)
+
+print(-7//2)  # answer is 4, round off quotient to lower integer
+print(10**5)  # 10 raised to the power 5
+
+# BITWISE_OPERATOR
+
+print('bitwise AND ',1 & 0) #bitwise and
+print('bitwise OR ', 1 | 0) #bitwise or
+print('bitwise XOR ',1 ^ 1) #bitwise xor
+print('bitwise NOT ',~110) #bitwise not
+
+#python does not appreciate 0110 as 6, it will only accept 110
+#python autoconverts binary to integer
+#USE 0b to tell python that number is binary and not decimal(int), eg: 0b0110
+
+#SHIFT_OPERATOR
+
+x,y = 0b10010110,0b10110111 
+x = x << 1 # moves binary bit to left and adds 0 as LSB
+print(bin(x),'\n',bin(y >> 2))
+
+#OTHER_OPERATORS
+#MEMBERSHIP OPERATOR
+
+#in
+
+skibidi = [1,2,3,4,5]
+
+for i in skibidi:
+    print(i)
+if 6 not in skibidi:
+    print('6 is not in skibidi')
+
+#IDENTITY_OPERATOR 
+
+#is & not is
+
+#it is not the same as == and != as is and not is can compare objects whereas == and != are for comparing values
+
+x = 1000
+y = 1000
+
+z = 10
+w = 10
+
+# Check identity for large numbers (new objects are created)
+if x is not y:
+    print("x and y are not the same object.")
+
+# Check identity for small numbers (interning in Python)
+if z is w:
+    print("z and w are the same object.")
+
+
+#TUPLES
+
+tup = (1,2,3,4,5,'ab','bc',['rizz',1,2,3,4,5,12.0],9.11,'porsche')
+
+print(tup[0:len(tup)])
+print(tup[::-1]) #prints in reverse order
+print(tup[-10:-1]) #prints reverse upto -1th
+print(tup[-1:-10]) #prints empty tuple as -1 is larger than -10, 
+
+#LIST
+
+list = [1,2,3,4,5,6,7,8,911,10]
+list2 = ['Hello_World!!!']
+
+#same as tuple only except tuple can't be modified and is declared with () unlike lists which are declared with []
+
+#DICTIONARY
+
+suka = {
+    "Item":5,
+    "bitches":0,
+    "do i care":False,
+    "weight of balls in tons":1
+}
+
+#TYPE_CONVERSIONS SPEEDRUN
+
+
+def type_conversion_example():
+    x = 0
+
+    int(x)
+    long(x)
+    float(x)
+    str(x)
+    tuple(x)
+    list(x)
+    set(x)
+    ord(x) #converts a single char to ASCII int value
+    oct(x) #octal
+    hex(x) #hexadecimal
+    chr(x) #char
+    unichr(x) #unicode char
+    dict(x)
+
+    int(x)
+    x = 0
+    
+#PASS ( cool method )
+
+#pass does nothing at all, it is only used syntactically
+
+for i in skibidi:
+    pass
+
+#we can not leave the body of aloop empty so we use pass, pass does nothing but it is can be used as a syntactical method
+
+#FUNCTION
+
+def describe_person(name, age, city):
+    print(f"{name} is {age} years old and lives in {city}.")
+
+describe_person(age=25, city="New York", name="Alice")
+# Output: Alice is 25 years old and lives in New York.
+
+
+
+#ROCKET_LANDING, LANDER, MOON, MARS, LANDING, ROVER
+
+def land():
+    thruster_fire,current_velocity,safe_landing_velocity,thruster_force,height,gravity = False,1,1,1,1,1
+    thruster_fire == True if height <= (current_velocity**2 - safe_landing_velocity**2)/(2*thruster_force-gravity) else thruster_fire == False
